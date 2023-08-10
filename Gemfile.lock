@@ -1,0 +1,29 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ethon (0.16.0)
+      ffi (>= 1.15.0)
+    ffi (1.15.5)
+    ox (2.14.17)
+    prometheus-client (4.2.1)
+    rack (3.0.8)
+    rackup (2.1.0)
+      rack (>= 3)
+      webrick (~> 1.8)
+    typhoeus (1.4.0)
+      ethon (>= 0.9.0)
+    webrick (1.8.1)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  ox
+  prometheus-client
+  rack
+  rackup
+  typhoeus
+  webrick
+
+BUNDLED WITH
+   2.4.13
