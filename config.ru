@@ -319,7 +319,7 @@ module ETAExporter
     topic = "homeassistant/sensor/#{DEVICE_ID}/availability"
     @mqtt_client ||= MQTT::Client.connect(
       host: ENV.fetch("MQTT_HOST"),
-      port: ENV.fetch("MQTT_PORT", 1883),
+      port: ENV.fetch("MQTT_PORT", 1883).to_i,
       will_topic: topic,
       will_payload: "offline",
       will_retain: true
