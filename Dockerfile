@@ -1,7 +1,9 @@
 FROM ruby:alpine
 
-COPY . /app
+RUN mkdir -p /app
+COPY Gemfile Gemfile.lock /app
 WORKDIR /app
-RUN apk add --no-cache ruby-dev build-base curl
-RUN gem install -N rack rackup webrick ox prometheus-client typhoeus
-CMD ["rackup", "-o", "0.0.0.0"]
+RUN apk add --no-cache ruby-dev build-base curl bash
+RUN bundle install
+COPY config.ru /app
+CMD ["bundle", "exec", "rackup", "-o", "0.0.0.0"]

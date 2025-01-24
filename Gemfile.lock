@@ -1,0 +1,54 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    base64 (0.2.0)
+    bigdecimal (3.1.9)
+    ethon (0.16.0)
+      ffi (>= 1.15.0)
+    ffi (1.17.1)
+    ffi (1.17.1-aarch64-linux-gnu)
+    ffi (1.17.1-aarch64-linux-musl)
+    ffi (1.17.1-arm-linux-gnu)
+    ffi (1.17.1-arm-linux-musl)
+    ffi (1.17.1-arm64-darwin)
+    ffi (1.17.1-x86-linux-gnu)
+    ffi (1.17.1-x86-linux-musl)
+    ffi (1.17.1-x86_64-darwin)
+    ffi (1.17.1-x86_64-linux-gnu)
+    ffi (1.17.1-x86_64-linux-musl)
+    mqtt (0.6.0)
+    ox (2.14.20)
+      bigdecimal (>= 3.0)
+    prometheus-client (4.2.3)
+      base64
+    rack (3.1.8)
+    rackup (2.2.1)
+      rack (>= 3)
+    typhoeus (1.4.1)
+      ethon (>= 0.9.0)
+    webrick (1.9.1)
+
+PLATFORMS
+  aarch64-linux-gnu
+  aarch64-linux-musl
+  arm-linux-gnu
+  arm-linux-musl
+  arm64-darwin
+  ruby
+  x86-linux-gnu
+  x86-linux-musl
+  x86_64-darwin
+  x86_64-linux-gnu
+  x86_64-linux-musl
+
+DEPENDENCIES
+  mqtt
+  ox
+  prometheus-client
+  rack
+  rackup
+  typhoeus
+  webrick
+
+BUNDLED WITH
+   2.6.3
