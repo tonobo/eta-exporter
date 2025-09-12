@@ -380,6 +380,7 @@ module ETAExporter
   end
 
   def sensors!
+    mqtt_client.publish("homeassistant/sensor/#{DEVICE_ID}/availability", "online", true)
     SENSOR_MAP.map do |name, uri|
       uri, type, data = *uri if uri.is_a?(Array)
       block = data[:processing]
