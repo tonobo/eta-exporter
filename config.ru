@@ -290,6 +290,7 @@ SENSOR_MAP = {
 }
 
 $registry = {}
+$last_refresh = Time.now.to_f
 
 module ETAExporter
 
@@ -381,6 +382,8 @@ module ETAExporter
 
   def sensors!
     mqtt_client.publish("homeassistant/sensor/#{DEVICE_ID}/availability", "online", true)
+    init_mqtt!
+
     SENSOR_MAP.map do |name, uri|
       uri, type, data = *uri if uri.is_a?(Array)
       block = data[:processing]
@@ -397,11 +400,14 @@ module ETAExporter
 
   def init_mqtt!
     return unless mqtt?
+    return unless $last_refresh < Time.now.to_f
 
     SENSOR_MAP.map do |name, uri|
       _uri, type, data = *uri if uri.is_a?(Array)
       publish_mqtt_config(name, type, data)
     end
+
+    $last_refresh = Time.now.to_f + 60
   end
 
   class Rack
